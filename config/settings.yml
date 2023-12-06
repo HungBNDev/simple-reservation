@@ -1,0 +1,13 @@
+reservation_master_data:
+  sleeps:
+    single: 1
+    double: 2
+    family: 4
+  available_rooms:
+    single: 2
+    double: 3
+    family: 1
+  price:
+    single: 30
+    double: 50
+    family: 85
