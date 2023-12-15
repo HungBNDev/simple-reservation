@@ -42,9 +42,3 @@ class HotelReservationSystem
     "#{combination.join(' ')} - $#{price}"
   end
 end
-
-# # Testing the system
-# system = HotelReservationSystem.new
-# puts system.find_best_option(2) # Expected: Double - $50
-# puts system.find_best_option(3) # Expected: Single Double - $80
-# puts system.find_best_option(6)
