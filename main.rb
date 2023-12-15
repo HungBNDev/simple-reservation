@@ -5,6 +5,5 @@ require './app/services/reservations/calculator'
 puts "You've passed the following arguments:"
 ARGV.each do |arg|
   puts arg
-  output = Reservations::Calculator.new(number_of_guests: arg).display_results
-  puts "The Output is: #{output}"
+  puts Reservations::Calculator.new.find_best_option(arg)
 end

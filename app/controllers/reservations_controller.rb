@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @results = Reservations::Calculator.new(number_of_guests: params[:number_of_guests]).display_results
+    @results = Reservations::Calculator.new.find_best_option(params[:number_of_guests])
   end
 
   private
