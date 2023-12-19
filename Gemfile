@@ -23,11 +23,16 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
-
+gem 'active_model_serializers', '~> 0.10.0'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
+gem 'pundit', '~> 2.3', '>= 2.3.1'
+
+gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'devise-jwt', '~> 0.11.0'
+
+gem 'jwt', '~> 2.7', '>= 2.7.1'
+gem 'aasm', '~> 5.1', '>= 5.1.1'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -41,6 +46,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 gem "config"
+gem 'rswag', '~> 2.13'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -48,6 +54,7 @@ gem "config"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rubocop', '~> 1.59'
 end
 
 group :development do
@@ -66,4 +73,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem 'faker'
+  gem 'database_cleaner-active_record'
 end
