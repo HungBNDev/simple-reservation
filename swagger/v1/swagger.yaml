@@ -1,0 +1,91 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/brands":
+    get:
+      summary: List all brands
+      tags:
+      - Brands
+      security:
+      - Bearer: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      nullable: true
+                  required:
+                  - id
+                  - name
+  "/api/v1/clients/sign_in":
+    post:
+      summary: Client login
+      tags:
+      - Client Authentication
+      parameters: []
+      responses:
+        '200':
+          description: User logged in successfully
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/api/v1/users/sign_in":
+    post:
+      summary: User login
+      tags:
+      - User Authentication
+      parameters: []
+      responses:
+        '200':
+          description: User logged in successfully
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+components:
+  securitySchemes:
+    Bearer:
+      description: JWT key necessary to use API calls
+      type: apiKey
+      name: Authorization
+      in: header
+schemas: {}
+servers:
+- url: http://localhost:3000
+  variables:
+    endPoint:
+      default: http://localhost:3000
+  description: localhost
